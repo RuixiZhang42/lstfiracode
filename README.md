@@ -20,7 +20,7 @@ Here is a sample preamble of a document:
 Contributing
 ------------
 
-This package is maintained at https://github.com/RuixiZhang42/lstfiracode.
+This package is maintained at https://github.com/RuixiZhang42/lstfiracode
 
 Issues and pull requests are welcome.
 
