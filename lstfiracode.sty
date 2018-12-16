@@ -20,7 +20,7 @@
 %
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{lstfiracode}[%
-  2018/12/15 v0.0a LaTeX listings support for Fira Code]
+  2018/12/16 v0.1a LaTeX listings support for Fira Code]
 
 \RequirePackage{kvoptions}
 \RequirePackage{listings}
@@ -49,6 +49,15 @@
   \ActivateVerbatimLigatures
 \fi
 
+\def\lstfiracode@lst@Literatekey#1\@nil@{%
+  \let\lst@ifxliterate\lst@if
+  \expandafter\def\expandafter\lst@literate\expandafter{\lst@literate#1}%
+}
+\lst@Key{moreliterate}{}{%
+  \@ifstar{\lst@true \lstfiracode@lst@Literatekey}
+          {\lst@false\lstfiracode@lst@Literatekey}#1\@nil@
+}
+
 \lstdefinestyle{FiraCodeStyle}{
   basewidth=0.6em,
   literate=
@@ -57,10 +66,10 @@
     {***}{{***}}3
     {**/}{{**/}}3
     {*>}{{*>}}2
-    {*/}{{*/}}2
+%    {*/}{{*/}}2
     {\\\\}{{\textbackslash\textbackslash}}2
     {\\\\\\}{{\textbackslash\textbackslash\textbackslash}}3
-    {\{-}{{\{-}}2
+%    {\{-}{{\{-}}2
     {[]}{{[]}}2
     {::}{{::}}2
     {:::}{{:::}}3
@@ -69,7 +78,7 @@
     {!!!}{{!!!}}3
     {!=}{{!=}}2
     {!==}{{!==}}3
-    {-\}}{{-\}}}2
+%    {-\}}{{-\}}}2
     {--}{{--}}2
     {---}{{---}}3
     {-->}{{-->}}3
@@ -95,15 +104,15 @@
     {?=}{{?=}}2
     {??}{{??}}2
     {???}{{???}}3
-    {;;}{{;;}}2
-    {;;;}{{;;;}}3
-    {/*}{{/*}}2
-    {/**}{{/**}}3
+%    {;;}{{;;}}2
+%    {;;;}{{;;;}}3
+%    {/*}{{/*}}2
+%    {/**}{{/**}}3
     {/=}{{/=}}2
     {/==}{{/==}}3
     {/>}{{/>}}2
-    {//}{{//}}2
-    {///}{{///}}3
+%    {//}{{//}}2
+%    {///}{{///}}3
     {\&\&}{{\&\&}}2
     {\&\&\&}{{\&\&\&}}3
     {||}{{||}}2

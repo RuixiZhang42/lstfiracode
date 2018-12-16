@@ -5,6 +5,7 @@ The `lstfiracode` package defines `FiraCodeStyle`, to be used as
 `\lstset{style=FiraCodeStyle}` with the [`listings`](https://ctan.org/pkg/listings)
 package. This style contains almost all ligatures in Nikita Prokopov’s
 [Fira Code](https://github.com/tonsky/FiraCode) family of fonts.
+A new key `moreliterate` is added, allowing additional user ligatures.
 Additional support for source code listings using Fira Code
 in the `verbatim` environment is available.
 
