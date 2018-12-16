@@ -5,12 +5,22 @@ The `lstfiracode` package defines `FiraCodeStyle`, to be used as
 `\lstset{style=FiraCodeStyle}` with the [`listings`](https://ctan.org/pkg/listings)
 package. This style contains almost all ligatures in Nikita Prokopov’s
 [Fira Code](https://github.com/tonsky/FiraCode) family of fonts.
-Additional support for code listings in the `verbatim` environment is also available.
+Additional support for source code listings using Fira Code
+in the `verbatim` environment is available.
+
+Here is a sample preamble of a document:
+
+    \documentclass{article}
+    \usepackage{fontspec}
+    \setmonofont{FiraCode-Regular.otf}[Ligatures=Common,Contextuals=Alternate]
+    \usepackage{listings}
+    \usepackage[verbatim]{lstfiracode}
+    \lstset{basicstyle=\ttfamily,style=FiraCodeStyle}
 
 Contributing
 ------------
 
-This package is maintained at .
+This package is maintained at https://github.com/RuixiZhang42/lstfiracode.
 
 Issues and pull requests are welcome.
 
@@ -31,10 +41,7 @@ Copyright and Licence
     
     The Current Maintainer of this work is Ruixi Zhang.
     
-    This work consists of the files zhlineskip.sty,
-                                    zhlineskip-man.tex,
-                                    zhlineskip-test.tex,
-                                    Latinmetrics.pdf,
-                                    CJKmetrics.pdf,
+    This work consists of the files lstfiracode.sty,
+                                    lstfiracode.tex,
                                     README.md (this file)
-              and the derived file  zhlineskip-man.pdf.
+              and the derived file  lstfiracode.pdf.
