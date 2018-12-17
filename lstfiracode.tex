@@ -1,7 +1,7 @@
 % !TeX program = XeLaTeX
 % !TeX encoding = UTF-8 Unicode
 %
-\documentclass[11pt,draft]{article}
+\documentclass[11pt]{article}
 \frenchspacing
 \setlength\parskip{1.5pt plus 1pt minus 0.5pt}
 \usepackage{fontspec}
@@ -18,10 +18,10 @@
 \newfontfamily\LMMono{Latin Modern Mono}[
   Scale=MatchLowercase
 ]
-\usepackage[final]{microtype}
+\usepackage{microtype}
 \usepackage{xcolor}
 
-\usepackage[final]{listings}
+\usepackage{listings}
 \usepackage[verbatim]{lstfiracode}
 \lstset{
   language=C++,
@@ -38,7 +38,7 @@
   \lstset{
     style={},
     literate={},
-    language=[LaTeX]TeX,
+    language=[LaTeX]{TeX},
     basicstyle=\small\LMMono,
     basewidth=0.525em,
     commentstyle=\itshape
