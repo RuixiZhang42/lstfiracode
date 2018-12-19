@@ -20,7 +20,7 @@
 %
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{lstfiracode}[%
-  2018/12/16 v0.1a LaTeX listings support for Fira Code]
+  2018/12/18 v0.1b Use Fira Code font for listings]
 
 \RequirePackage{kvoptions}
 \RequirePackage{listings}
@@ -39,10 +39,18 @@
 
 \let\lstfiracode@verbatim@nolig@list\verbatim@nolig@list
 \newcommand*\ActivateVerbatimLigatures{%
-  \renewcommand*\verbatim@nolig@list{}%
+  \def\verbatim@nolig@list{\do\`\do\,\do\'}%
 }
 \newcommand*\DeactivateVerbatimLigatures{%
-  \renewcommand*\verbatim@nolig@list{\lstfiracode@verbatim@nolig@list}%
+  \expandafter\def\expandafter\verbatim@nolig@list\expandafter{%
+    \lstfiracode@verbatim@nolig@list
+    \do\w\do\*\do\/\do\:\do\=\do\!\do\~\do\[%
+    \do\#\do\(\do\?\do\_\do\.\do\;\do\&\do\|%
+    \do\+\do\$\do\@\do\%\do\]% Do "7B and "7D
+  }%
+}
+\newcommand*\RestoreVerbatimBehavior{%
+  \let\verbatim@nolig@list\lstfiracode@verbatim@nolig@list
 }
 
 \iflstfiracode@verbatim
@@ -64,21 +72,21 @@
     {www}{{www}}3
     {**}{{**}}2
     {***}{{***}}3
-    {**/}{{**/}}3
+%    {**/}{{**/}}3 % Removed in Fira Code v1.206
     {*>}{{*>}}2
-%    {*/}{{*/}}2
-    {\\\\}{{\textbackslash\textbackslash}}2
-    {\\\\\\}{{\textbackslash\textbackslash\textbackslash}}3
-%    {\{-}{{\{-}}2
-    {[]}{{[]}}2
+%    {*/}{{*/}}2 % Interferes with comment highlighting
+%    {\\\\}{{\textbackslash\textbackslash}}2 % Removed in Fira Code v1.206
+%    {\\\\\\}{{\textbackslash\textbackslash\textbackslash}}3 % Removed in Fira Code v1.206
+%    {\{-}{{\{-}}2 % Removed in Fira Code v1.206
+%    {[]}{{[]}}2 % Removed in Fira Code v1.206
     {::}{{::}}2
     {:::}{{:::}}3
     {:=}{{:=}}2
     {!!}{{!!}}2
-    {!!!}{{!!!}}3
+%    {!!!}{{!!!}}3 % Removed in Fira Code v1.206
     {!=}{{!=}}2
     {!==}{{!==}}3
-%    {-\}}{{-\}}}2
+%    {-\}}{{-\}}}2 % Removed in Fira Code v1.206
     {--}{{--}}2
     {---}{{---}}3
     {-->}{{-->}}3
@@ -103,20 +111,20 @@
     {...}{{...}}3
     {?=}{{?=}}2
     {??}{{??}}2
-    {???}{{???}}3
-%    {;;}{{;;}}2
-%    {;;;}{{;;;}}3
-%    {/*}{{/*}}2
-%    {/**}{{/**}}3
+%    {???}{{???}}3 % Removed in Fira Code v1.206
+%    {;;}{{;;}}2 % Interferes with comment highlighting
+%    {;;;}{{;;;}}3 % Removed in Fira Code v1.206
+%    {/*}{{/*}}2 % Interferes with comment highlighting
+%    {/**}{{/**}}3 % Removed in Fira Code v1.206
     {/=}{{/=}}2
     {/==}{{/==}}3
     {/>}{{/>}}2
-%    {//}{{//}}2
-%    {///}{{///}}3
+%    {//}{{//}}2 % Interferes with comment highlighting
+%    {///}{{///}}3 % Interferes with comment highlighting
     {\&\&}{{\&\&}}2
-    {\&\&\&}{{\&\&\&}}3
+%    {\&\&\&}{{\&\&\&}}3 % Removed in Fira Code v1.206
     {||}{{||}}2
-    {|||}{{|||}}3
+%    {|||}{{|||}}3 % Removed in Fira Code v1.206
     {||=}{{||=}}3
     {|=}{{|=}}2
     {|>}{{|>}}2
@@ -130,9 +138,9 @@
     {==>}{{==>}}3
     {=>}{{=>}}2
     {=>>}{{=>>}}3
-    {=<}{{=<}}2
+%    {=<}{{=<}}2 % Removed in Fira Code v1.206
     {=<<}{{=<<}}3
-    {=~}{{=\textasciitilde}}2
+%    {=~}{{=\textasciitilde}}2 % Removed in Fira Code v1.206
     {=/=}{{=/=}}3
     {>-}{{>-}}2
     {>=}{{>=}}2
@@ -171,9 +179,9 @@
     {~>}{{\textasciitilde>}}2
     {~~}{{\textasciitilde\textasciitilde}}2
     {~~>}{{\textasciitilde\textasciitilde>}}3
-    {~~~}{{\textasciitilde\textasciitilde\textasciitilde}}3
+%    {~~~}{{\textasciitilde\textasciitilde\textasciitilde}}3 % Removed in Fira Code v1.206
     {\%\%}{{\%\%}}2
-    {\%\%\%}{{\%\%\%}}3
+%    {\%\%\%}{{\%\%\%}}3 % Removed in Fira Code v1.206
     {<==>}{{<==>}}4
     {<||}{{<||}}3
     {<|||}{{<|||}}4
