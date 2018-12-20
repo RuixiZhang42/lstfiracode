@@ -26,7 +26,7 @@
 \lstset{
   language=C++,
   style=FiraCodeStyle,
-  basicstyle=\small\ttfamily,
+  basicstyle=\ttfamily,
   commentstyle=\color{orange}
 }
 \makeatletter
@@ -67,7 +67,7 @@
 }
 \title{The \texttt{lstfiracode} package}
 \author{Ruixi~Zhang\thanks{\href{mailto:\myemail}{\nolinkurl{\myemail}}.}}
-\date{2018/12/18\enskip v0.1b}
+\date{2018/12/20\enskip v0.1b}
 
 \begin{document}
 
@@ -143,13 +143,9 @@ To access \verb|FiraCodeStyle|, simply load \verb|lstfiracode| \emph{after}
 \end{LaTeXlisting}
 which produces the following \verb|verbatim| (observe the {\LMMono<-},
 the {\LMMono www} and the {\LMMono>>=} ligatures):
-\begingroup
-\fontsize{10}{12}\selectfont
 \begin{verbatim}
     A<-www>>=B
-\end{verbatim}%
-\endgroup
-\noindent
+\end{verbatim}
 and the following \verb|lstlisting| (observe the {\LMMono++}
 and the {\LMMono<<} ligatures):
 \begin{lstlisting}
@@ -168,8 +164,8 @@ The \verb|lstfiracode| package provides one package option and three user
 commands, described below.
 
 You may load the \verb|lstfiracode| package with the option \verb|verbatim|,
-or equivalently \verb|verbatim=true|. This activates all the Fira Code
-ligatures in the \verb|verbatim| environment.
+or equivalently \verb|verbatim=true|. This activates all Fira Code ligatures
+in the \verb|verbatim| environment.
 \begin{LaTeXlisting}
     % Activate Fira Code ligatures in verbatim
     \usepackage[verbatim]{lstfiracode}
@@ -194,6 +190,7 @@ Activate all Fira Code ligatures in \verb|verbatim|. This is executed
 automatically with the package option \verb|verbatim=true|.
 \item[\texttt{\textbackslash DeactivateVerbatimLigatures}]
 Suppress \emph{almost all} Fira Code ligatures in \verb|verbatim|.
+Currently, it cannot break the {\LMMono\#\{} and the {\LMMono|\}} ligatures.
 \item[\texttt{\textbackslash RestoreVerbatimBehavior}]
 Restore how \verb|verbatim| is originally handled by \LaTeX.
 \end{description}
@@ -313,15 +310,15 @@ Pull requests are welcome.
 \section*{Version history}
 
 \begin{description}
-\versionhistory{v0.1a}{2018/12/16}{%
-  Initial release.%
-}
-\versionhistory{v0.1b}{2018/12/18}{%
+\versionhistory{v0.1b}{2018/12/20}{%
   Updated \texttt{FiraCodeStyle} literate list.
   Added \texttt{\textbackslash RestoreVerbatimBehavior}.
   Re-implemented
     \texttt{\textbackslash Activate}/%
     \texttt{\textbackslash DeactivateVerbatimLigatures}.%
+}
+\versionhistory{v0.1a}{2018/12/16}{%
+  Initial release.%
 }
 \end{description}
 
