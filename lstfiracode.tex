@@ -12,7 +12,6 @@
 ]
 \setmonofont{Fira Code}[
   Scale=MatchLowercase,
-  Ligatures=Common,
   Contextuals=Alternate
 ]
 \newfontfamily\LMMono{Latin Modern Mono}[
@@ -67,7 +66,7 @@
 }
 \title{The \texttt{lstfiracode} package}
 \author{Ruixi~Zhang\thanks{\href{mailto:\myemail}{\nolinkurl{\myemail}}.}}
-\date{2018/12/20\enskip v0.1b}
+\date{2018/12/24\enskip v0.1c}
 
 \begin{document}
 
@@ -116,7 +115,6 @@ To access \verb|FiraCodeStyle|, simply load \verb|lstfiracode| \emph{after}
     \usepackage{fontspec}
     \setmonofont{FiraCode-Regular.otf}[
       BoldFont=FiraCode-Bold.otf,
-      Ligatures=Common,      % Activate the liga feature
       Contextuals=Alternate  % Activate the calt feature
     ]
     \usepackage{xcolor}
@@ -191,6 +189,7 @@ automatically with the package option \verb|verbatim=true|.
 \item[\texttt{\textbackslash DeactivateVerbatimLigatures}]
 Suppress \emph{almost all} Fira Code ligatures in \verb|verbatim|.
 Currently, it cannot break the {\LMMono\#\{} and the {\LMMono|\}} ligatures.
+You should use Fira Mono if you wish to avoid ligatures altogether.
 \item[\texttt{\textbackslash RestoreVerbatimBehavior}]
 Restore how \verb|verbatim| is originally handled by \LaTeX.
 \end{description}
@@ -310,6 +309,14 @@ Pull requests are welcome.
 \section*{Version history}
 
 \begin{description}
+\versionhistory{v0.1c}{2018/12/24}{%
+  Removed \texttt{Ligatures=Common}
+    from \texttt{README.md} and \texttt{lstfiracode.tex}
+    (see \href{https://github.com/RuixiZhang42/lstfiracode/issues/1}{%
+    \#1}).
+  Re-implemented
+    \texttt{\textbackslash DeactivateVerbatimLigatures}.%
+}
 \versionhistory{v0.1b}{2018/12/20}{%
   Updated \texttt{FiraCodeStyle} literate list.
   Added \texttt{\textbackslash RestoreVerbatimBehavior}.

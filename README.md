@@ -16,7 +16,7 @@ Here is a sample preamble of a document:
 
     \documentclass{article}
     \usepackage{fontspec}
-    \setmonofont{FiraCode-Regular.otf}[Ligatures=Common,Contextuals=Alternate]
+    \setmonofont{FiraCode-Regular.otf}[Contextuals=Alternate]
     \usepackage{listings}
     \usepackage[verbatim]{lstfiracode}
     \lstset{style=FiraCodeStyle,basicstyle=\ttfamily}
