@@ -31,7 +31,7 @@ Issues and pull requests are welcome.
 Copyright and Licence
 ---------------------
 
-    Copyright (C) 2018 by Ruixi Zhang <ruixizhang42@gmail.com>
+    Copyright (C) 2018, 2019 by Ruixi Zhang <ruixizhang42@gmail.com>
     
     This work may be distributed and/or modified under the
     conditions of the LaTeX Project Public License, either version 1.3c
