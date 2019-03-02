@@ -1,5 +1,5 @@
 %
-% Copyright (C) 2018 by Ruixi Zhang <ruixizhang42@gmail.com>
+% Copyright (C) 2018, 2019 by Ruixi Zhang <ruixizhang42@gmail.com>
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3c
@@ -20,7 +20,7 @@
 %
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{lstfiracode}[%
-  2018/12/24 v0.1c Use Fira Code font for listings]
+  xxxx/xx/xx v0.1d Use Fira Code font for listings]
 
 \RequirePackage{kvoptions}
 \RequirePackage{listings}
@@ -52,6 +52,8 @@
 \newcommand*\RestoreVerbatimBehavior{%
   \let\verbatim@nolig@list\lstfiracode@verbatim@nolig@list
 }
+\newcommand*\EnableVerbatimLigatures{\ActivateVerbatimLigatures}
+\newcommand*\DisableVerbatimLigatures{\DeactivateVerbatimLigatures}
 
 \iflstfiracode@verbatim
   \ActivateVerbatimLigatures
