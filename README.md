@@ -10,7 +10,7 @@ Additional support for source code listings using Fira Code
 in the `verbatim` environment is available.
 
 This package does not provide the Fira Code font files.
-The newest version of the font files can be downloaded at the
+The newest version of the fonts can be downloaded at the
 [GitHub Fira Code Releases page](https://github.com/tonsky/FiraCode/releases).
 Here is a sample preamble of a document:
 
