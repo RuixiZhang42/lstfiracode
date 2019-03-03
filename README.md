@@ -6,8 +6,7 @@ The `lstfiracode` package defines `FiraCodeStyle`, to be used as
 package. This style contains almost all ligatures in Nikita Prokopov’s
 [Fira Code](https://github.com/tonsky/FiraCode) family of fonts.
 A new key `moreliterate` to `\lstset` is added, allowing additional user ligatures.
-Additional support for source code listings using Fira Code
-in the `verbatim` environment is available.
+Additional support for using Fira Code in the `verbatim` environment is available.
 
 This package does not provide the Fira Code font files.
 The newest version of the fonts can be downloaded at the
